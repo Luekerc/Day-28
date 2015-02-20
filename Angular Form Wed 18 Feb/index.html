@@ -1,0 +1,46 @@
+<html class="no-js">
+   <head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+      <title>Day 28 Responsive Angular Form</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="styles/main.css">
+   </head>
+   <body ng-app="app" ng-controller="loginController">
+    
+       <main class="contact-form" ng-show="submitSuccess">
+   		<div class="contact-us">Contact Us</div>
+   		<form ng-submit="submit()">
+         
+   			<div class="div-title">Name</div>
+   			<input ng-class="class1" ng-model="name" type="text" placeholder="Sally S. Smith">
+   	<!-- <div class="error-msg">Name cannot be left empty</div> -->
+            <h3 ng-bind="error1"></h3>
+   			<div class="div-title">Email</div>
+   			<input ng-class="class2" ng-model="email" type="text" placeholder="ssmith@gmail.com">
+            <h3 ng-bind="error2"></h3>
+   	<!-- <div class="error-msg">Email must contain an '@'</div> -->
+   			<div class="div-title">Website</div>
+   			<input ng-class="class3" ng-model="website" type="text" placeholder="http://mssmith.com">
+            <h3 ng-bind="error3"></h3>
+ <!-- <div class="error-msg">Website must start with http://</div> -->
+   			<div class="div-title">Message</div>
+   			<textarea ng-class="class4" ng-model="message" type="text" placeholder="Friendly message here...">
+   			</textarea>
+            <h3 ng-bind="error4"></h3>
+   			 <!-- <div class="error-msg">Message cannot be left empty</div> -->
+   			<button class="button" type='button'>Submit</button>
+   		</form>
+		</main>
+
+   		<div id="success-view" ng-hide="submitSuccess">Thanks for contacting us {{name}} }}.  We have received your message and will be in touch with you shortly.
+   		</div>
+
+	<script type = "text/javascript" src="bower_components/angular/angular.min.js" ></script>
+	<script type="text/javascript" src="scripts/app.js"></script>
+	<script type="text/javascript" src="scripts/controllers.js"></script>
+
+</body>
+</html>
+
