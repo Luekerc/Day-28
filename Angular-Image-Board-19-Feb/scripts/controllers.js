@@ -10,16 +10,18 @@ angular.module('app.controllers', [])
 	$scope.image='';
 	$scope.caption='';
 
+setInterval(function() {
 	$http.get('http://tiny-pizza-server.herokuapp.com/collections/charles-http').success(function(response){
 		$scope.messages = [];
 		for(var i=0; i < response.length; i++){
 			$scope.messages.push(response[i]);
 		}
-
-})
-.error(function(err){
+	})
+	.error(function(err){
 	console.log(err);
-});
+	});
+}, 500);
+
 $scope.sendData=function(image,caption){
 	var validHttp=false;
 	var validCaption=false;
